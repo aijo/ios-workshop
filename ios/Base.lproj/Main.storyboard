@@ -101,6 +101,7 @@
                         <outlet property="logoImageView" destination="NqI-hi-dwO" id="OR8-gM-VQa"/>
                         <outlet property="passwordTextfield" destination="2uw-Fg-DAU" id="wr2-GY-G8T"/>
                         <outlet property="signinButton" destination="8QQ-Oc-cWs" id="uqb-TP-r2S"/>
+                        <outlet property="signinConstraint" destination="1SH-cT-vUO" id="TT2-4c-CeO"/>
                         <outlet property="signinFormView" destination="S1K-iW-XrB" id="Vdd-8S-rXO"/>
                         <outlet property="usernameTextfield" destination="mWS-dx-1Mr" id="4Mv-bb-RiN"/>
                     </connections>

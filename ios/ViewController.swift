@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var usernameTextfield: UITextField!
     @IBOutlet weak var passwordTextfield: UITextField!
     @IBOutlet weak var signinButton: UIButton!
+    @IBOutlet weak var signinConstraint: NSLayoutConstraint!
     
     private let STATUS_BAR_HEIGHT:CGFloat = 20
     private let LOGO_DEFAULT_CONSTRAINT:CGFloat = 40
@@ -28,6 +29,12 @@ class ViewController: UIViewController {
         signinFormView.alpha = 0
         signinButton.alpha = 0
         logoConstraint.constant = view.center.y-(LOGO_HEIGHT/2)-STATUS_BAR_HEIGHT
+        
+        usernameTextfield.delegate = self
+        passwordTextfield.delegate = self
+        
+        let dismissGesture = UITapGestureRecognizer(target: self, action: #selector(ViewController.dismissKeyboard))
+        view.addGestureRecognizer(dismissGesture)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -42,12 +49,36 @@ class ViewController: UIViewController {
             self.signinButton.alpha = 1
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
     }
 
+}
+
+extension ViewController: UITextFieldDelegate {
+    
+    private func animateTextField(textField: UITextField, up: Bool) {
+        let movementDistance:CGFloat = -220
+        let movementDuration: Double = 0.3
+        
+        let movement:CGFloat = up ? movementDistance : -movementDistance
+        UIView.beginAnimations("animateTextField", context: nil)
+        UIView.setAnimationBeginsFromCurrentState(true)
+        UIView.setAnimationDuration(movementDuration)
+        signinConstraint.constant -= movement
+        view.layoutIfNeeded()
+        UIView.commitAnimations()
+    }
+    
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        animateTextField(textField: textField, up:true)
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        animateTextField(textField: textField, up:false)
+    }
 
 }
 
