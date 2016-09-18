@@ -1,12 +1,25 @@
 PODS:
   - Alamofire (4.0.0)
+  - ObjectMapper (1.4.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
+  - ObjectMapper (from `https://github.com/Hearst-DD/ObjectMapper.git`, branch `swift-3`)
+
+EXTERNAL SOURCES:
+  ObjectMapper:
+    :branch: swift-3
+    :git: https://github.com/Hearst-DD/ObjectMapper.git
+
+CHECKOUT OPTIONS:
+  ObjectMapper:
+    :commit: 6ba230a37a4261bfad66ac573cc40b9d6c5c89f1
+    :git: https://github.com/Hearst-DD/ObjectMapper.git
 
 SPEC CHECKSUMS:
   Alamofire: fef59f00388f267e52d9b432aa5d93dc97190f14
+  ObjectMapper: a07ad0462c5adf014adc0f89ef04c29b626e855e
 
-PODFILE CHECKSUM: a9b8d52cc2fd1a9819a96ca8c3f93abe4119639e
+PODFILE CHECKSUM: 62d1ea2d68ad99a302034465f59027b4ab0c144d
 
 COCOAPODS: 1.0.1

@@ -4,6 +4,12 @@ use_frameworks!
 
 target 'ios' do    
     pod 'Alamofire', '~> 4.0'
+    pod 'ObjectMapper',
+        :git => 'https://github.com/Hearst-DD/ObjectMapper.git',
+        :branch => 'swift-3'
+#    pod 'SwiftyJSON',
+#        :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git',
+#        :branch => 'swift3'
 end
 
 post_install do |installer|
