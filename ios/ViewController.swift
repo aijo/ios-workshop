@@ -35,6 +35,13 @@ class ViewController: UIViewController {
         
         let dismissGesture = UITapGestureRecognizer(target: self, action: #selector(ViewController.dismissKeyboard))
         view.addGestureRecognizer(dismissGesture)
+        
+        signinButton.isEnabled = false
+        signinButton.setBackgroundColor(color: UIColor.black, forState: UIControlState.normal)
+        signinButton.setBackgroundColor(color: UIColor.init(rgba: "#EEEEEE"), forState: UIControlState.disabled)
+        
+        usernameTextfield.addTarget(self, action: #selector(ViewController.textFieldDidChange(_:)), for: UIControlEvents.editingChanged)
+        passwordTextfield.addTarget(self, action: #selector(ViewController.textFieldDidChange(_:)), for: UIControlEvents.editingChanged)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -78,6 +85,16 @@ extension ViewController: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         animateTextField(textField: textField, up:false)
+    }
+    
+    func textFieldDidChange(_ textField: UITextField) {
+        if let username = usernameTextfield.text, let password = passwordTextfield.text {
+            if (username.characters.count > 0) && (password.characters.count > 0) {
+                signinButton.isEnabled = true
+            } else {
+                signinButton.isEnabled = false
+            }
+        }
     }
 
 }
