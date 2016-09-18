@@ -61,6 +61,10 @@ class ViewController: UIViewController {
         view.endEditing(true)
     }
 
+    @IBAction func signinButtonDidPressed(_ sender: AnyObject) {
+        self.performSegue(withIdentifier: "gotoMain", sender: nil)
+    }
+    
 }
 
 extension ViewController: UITextFieldDelegate {

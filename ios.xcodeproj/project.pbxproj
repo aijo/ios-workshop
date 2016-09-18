@@ -17,6 +17,7 @@
 		C8082CD61D8E37EE009D897E /* iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8082CD51D8E37EE009D897E /* iosUITests.swift */; };
 		C8082CE51D8E52E7009D897E /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8082CE41D8E52E7009D897E /* UIButtonExtension.swift */; };
 		C8082CE71D8E53DB009D897E /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8082CE61D8E53DB009D897E /* UIColorExtension.swift */; };
+		C8082CEA1D8E6540009D897E /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8082CE91D8E6540009D897E /* FeedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		C8082CD71D8E37EE009D897E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8082CE41D8E52E7009D897E /* UIButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		C8082CE61D8E53DB009D897E /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		C8082CE91D8E6540009D897E /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 				C8082CB51D8E37EE009D897E /* AppDelegate.swift */,
 				C8082CB71D8E37EE009D897E /* ViewController.swift */,
 				C8082CB91D8E37EE009D897E /* Main.storyboard */,
+				C8082CE81D8E6529009D897E /* Controller */,
 				C8082CE31D8E52C1009D897E /* Helper */,
 				C8082CBC1D8E37EE009D897E /* Assets.xcassets */,
 				C8082CBE1D8E37EE009D897E /* LaunchScreen.storyboard */,
@@ -161,6 +164,14 @@
 				C8082CE61D8E53DB009D897E /* UIColorExtension.swift */,
 			);
 			name = Helper;
+			sourceTree = "<group>";
+		};
+		C8082CE81D8E6529009D897E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C8082CE91D8E6540009D897E /* FeedViewController.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -350,6 +361,7 @@
 			files = (
 				C8082CB81D8E37EE009D897E /* ViewController.swift in Sources */,
 				C8082CB61D8E37EE009D897E /* AppDelegate.swift in Sources */,
+				C8082CEA1D8E6540009D897E /* FeedViewController.swift in Sources */,
 				C8082CE51D8E52E7009D897E /* UIButtonExtension.swift in Sources */,
 				C8082CE71D8E53DB009D897E /* UIColorExtension.swift in Sources */,
 			);
