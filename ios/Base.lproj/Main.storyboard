@@ -49,7 +49,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="alphabet" returnKeyType="next"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2uw-Fg-DAU">
                                         <constraints>
@@ -57,7 +57,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="alphabet" returnKeyType="continue" secureTextEntry="YES"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XlV-wy-aBy">
                                         <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -96,6 +96,14 @@
                             <constraint firstAttribute="trailing" secondItem="S1K-iW-XrB" secondAttribute="trailing" constant="10" id="x6Q-qi-grR"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="logoConstraint" destination="Ene-a3-rF6" id="fFn-LE-Dcu"/>
+                        <outlet property="logoImageView" destination="NqI-hi-dwO" id="OR8-gM-VQa"/>
+                        <outlet property="passwordTextfield" destination="2uw-Fg-DAU" id="wr2-GY-G8T"/>
+                        <outlet property="signinButton" destination="8QQ-Oc-cWs" id="uqb-TP-r2S"/>
+                        <outlet property="signinFormView" destination="S1K-iW-XrB" id="Vdd-8S-rXO"/>
+                        <outlet property="usernameTextfield" destination="mWS-dx-1Mr" id="4Mv-bb-RiN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
