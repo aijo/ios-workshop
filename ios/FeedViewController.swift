@@ -9,7 +9,10 @@
 import UIKit
 
 class FeedViewController: UITableViewController {
-
+    
+    let service = Services()
+    var items: [Item]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,6 +25,11 @@ class FeedViewController: UITableViewController {
         title = "Feeds"
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 540
+        
+        service.getInstagramFeed(user: "aijojoe") { (medias, error) in
+            self.items = medias?.items
+            self.tableView.reloadData()
+        }
     }
 
     // MARK: - Table view data source
@@ -31,13 +39,22 @@ class FeedViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        if let items = items {
+            return items.count
+        }
+        return 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "feedCell", for: indexPath) as! FeedCell
 
         // Configure the cell...
+        if let item = items?[indexPath.row] {
+            cell.userLabel.text = item.username ?? ""
+            cell.locationLabel.text = item.location ?? ""
+            cell.contentLabel.text = item.caption ?? ""
+            cell.likeLabel.text = "♥ \(item.likes ?? 0)"
+        }
 
         return cell
     }
