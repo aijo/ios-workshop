@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ios" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +18,91 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="instagram-icon" translatesAutoresizingMaskIntoConstraints="NO" id="NqI-hi-dwO">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="dUh-gp-dDJ"/>
+                                    <constraint firstAttribute="height" constant="100" id="zLo-oc-xzA"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8QQ-Oc-cWs">
+                                <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="fAc-wN-4UH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="Signin">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S1K-iW-XrB">
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7jO-AC-8lz">
+                                        <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="vJa-sh-IMt"/>
+                                        </constraints>
+                                    </view>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mWS-dx-1Mr">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="CNE-eM-ta6"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2uw-Fg-DAU">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="4xk-2X-tZp"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XlV-wy-aBy">
+                                        <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="kF0-p7-aBq"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="XlV-wy-aBy" firstAttribute="leading" secondItem="S1K-iW-XrB" secondAttribute="leading" constant="20" id="FuD-x7-fOl"/>
+                                    <constraint firstAttribute="trailing" secondItem="2uw-Fg-DAU" secondAttribute="trailing" constant="20" id="ORC-GH-k5t"/>
+                                    <constraint firstItem="mWS-dx-1Mr" firstAttribute="top" secondItem="S1K-iW-XrB" secondAttribute="top" constant="20" id="Rjx-rb-Rer"/>
+                                    <constraint firstItem="XlV-wy-aBy" firstAttribute="top" secondItem="2uw-Fg-DAU" secondAttribute="bottom" id="RzC-5a-ux8"/>
+                                    <constraint firstItem="7jO-AC-8lz" firstAttribute="top" secondItem="mWS-dx-1Mr" secondAttribute="bottom" id="XSR-ge-H6J"/>
+                                    <constraint firstAttribute="trailing" secondItem="7jO-AC-8lz" secondAttribute="trailing" constant="20" id="Xvb-Ab-8p5"/>
+                                    <constraint firstItem="7jO-AC-8lz" firstAttribute="leading" secondItem="S1K-iW-XrB" secondAttribute="leading" constant="20" id="ZnU-zK-yF4"/>
+                                    <constraint firstAttribute="trailing" secondItem="XlV-wy-aBy" secondAttribute="trailing" constant="20" id="cmQ-OI-vgK"/>
+                                    <constraint firstAttribute="height" constant="120" id="d9y-b4-HtE"/>
+                                    <constraint firstItem="2uw-Fg-DAU" firstAttribute="top" secondItem="7jO-AC-8lz" secondAttribute="bottom" constant="8" id="dOQ-hb-Ffn"/>
+                                    <constraint firstAttribute="trailing" secondItem="mWS-dx-1Mr" secondAttribute="trailing" constant="20" id="dtZ-6t-nI4"/>
+                                    <constraint firstItem="2uw-Fg-DAU" firstAttribute="leading" secondItem="S1K-iW-XrB" secondAttribute="leading" constant="20" id="j8q-4d-UQs"/>
+                                    <constraint firstItem="mWS-dx-1Mr" firstAttribute="leading" secondItem="S1K-iW-XrB" secondAttribute="leading" constant="20" id="ubD-P7-yoQ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="8QQ-Oc-cWs" secondAttribute="bottom" constant="20" id="1SH-cT-vUO"/>
+                            <constraint firstItem="NqI-hi-dwO" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="Ene-a3-rF6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8QQ-Oc-cWs" secondAttribute="trailing" constant="10" id="Qpd-7K-V4H"/>
+                            <constraint firstItem="S1K-iW-XrB" firstAttribute="top" secondItem="NqI-hi-dwO" secondAttribute="bottom" constant="10" id="VDK-Cd-oHZ"/>
+                            <constraint firstItem="NqI-hi-dwO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VMK-O6-DIl"/>
+                            <constraint firstItem="8QQ-Oc-cWs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="Vc0-Oz-8hz"/>
+                            <constraint firstItem="S1K-iW-XrB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="c6f-FR-iiz"/>
+                            <constraint firstAttribute="trailing" secondItem="S1K-iW-XrB" secondAttribute="trailing" constant="10" id="x6Q-qi-grR"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="137.18140929535232"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="instagram-icon" width="256" height="256"/>
+    </resources>
 </document>
