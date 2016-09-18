@@ -18,6 +18,7 @@
 		C8082CE51D8E52E7009D897E /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8082CE41D8E52E7009D897E /* UIButtonExtension.swift */; };
 		C8082CE71D8E53DB009D897E /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8082CE61D8E53DB009D897E /* UIColorExtension.swift */; };
 		C8082CEA1D8E6540009D897E /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8082CE91D8E6540009D897E /* FeedViewController.swift */; };
+		C8082CED1D8ED04C009D897E /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8082CEC1D8ED04C009D897E /* FeedCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		C8082CE41D8E52E7009D897E /* UIButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		C8082CE61D8E53DB009D897E /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		C8082CE91D8E6540009D897E /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		C8082CEC1D8ED04C009D897E /* FeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,9 +171,18 @@
 		C8082CE81D8E6529009D897E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C8082CEB1D8ED037009D897E /* Cell */,
 				C8082CE91D8E6540009D897E /* FeedViewController.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		C8082CEB1D8ED037009D897E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C8082CEC1D8ED04C009D897E /* FeedCell.swift */,
+			);
+			name = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -364,6 +375,7 @@
 				C8082CEA1D8E6540009D897E /* FeedViewController.swift in Sources */,
 				C8082CE51D8E52E7009D897E /* UIButtonExtension.swift in Sources */,
 				C8082CE71D8E53DB009D897E /* UIColorExtension.swift in Sources */,
+				C8082CED1D8ED04C009D897E /* FeedCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
