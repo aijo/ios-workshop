@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DateTools
 
 class FeedCell: UITableViewCell {
     
@@ -33,6 +34,17 @@ class FeedCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func setupCell(item: Item) {
+        userLabel.text = item.username ?? ""
+        locationLabel.text = item.location ?? ""
+        contentLabel.text = item.caption ?? ""
+        likeLabel.text = "♥ \(item.likes ?? 0)"
+        
+        if let date = item.datetime {
+            dateTimeLabel.text = (date as NSDate).timeAgoSinceNow()
+        }
     }
 
 }
