@@ -10,6 +10,7 @@ target 'ios' do
 #    pod 'SwiftyJSON',
 #        :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git',
 #        :branch => 'swift3'
+    pod 'DateTools', '~> 1.7'
 end
 
 post_install do |installer|

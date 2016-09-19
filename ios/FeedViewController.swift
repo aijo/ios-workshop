@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DateTools
 
 class FeedViewController: UITableViewController {
     
@@ -54,6 +55,10 @@ class FeedViewController: UITableViewController {
             cell.locationLabel.text = item.location ?? ""
             cell.contentLabel.text = item.caption ?? ""
             cell.likeLabel.text = "♥ \(item.likes ?? 0)"
+            
+            if let date = item.datetime {
+                cell.dateTimeLabel.text = (date as NSDate).timeAgoSinceNow()
+            }
         }
 
         return cell
