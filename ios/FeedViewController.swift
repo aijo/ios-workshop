@@ -11,7 +11,7 @@ import UIKit
 class FeedViewController: UITableViewController {
     
     let service = Services.sharedInstance
-    var items: [Item]?
+    var items = [Item]()
     var lastMaxId: String?
     
     override func viewDidLoad() {
@@ -27,10 +27,16 @@ class FeedViewController: UITableViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 540
         
+        loadData()
+    }
+    
+    func loadData() {
         service.getInstagramFeed(user: "aijojoe", maxId: lastMaxId) { (medias, error) in
-            self.items = medias?.items
-            self.lastMaxId = medias?.items?.last?.id
-            self.tableView.reloadData()
+            if let items = medias?.items {
+                self.items.append(contentsOf: items)
+                self.lastMaxId = items.last?.id
+                self.tableView.reloadData()
+            }
         }
     }
 
@@ -41,23 +47,25 @@ class FeedViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let items = items {
-            return items.count
-        }
-        return 0
+        return items.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "feedCell", for: indexPath) as! FeedCell
 
         // Configure the cell...
-        if let item = items?[indexPath.row] {
-            cell.setupCell(item: item)
-        }
+        cell.setupCell(item: items[indexPath.row])
 
         return cell
     }
 
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let lastElement = items.count - 1
+        if indexPath.row == lastElement {
+            loadData()
+        }
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

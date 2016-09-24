@@ -30,6 +30,6 @@ struct Item: Mappable {
         avatar      <- map["caption.from.profile_picture"]
         likes       <- map["likes.count"]
         datetime    <- (map["caption.created_time"], DateTransform())
-        id          <- map["caption.id"]
+        id          <- map["id"]
     }
 }

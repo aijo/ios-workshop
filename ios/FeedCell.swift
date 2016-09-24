@@ -60,7 +60,7 @@ class FeedCell: UITableViewCell {
         if let avatar = item.imageUrl {
             service.getImage(imageUrl: avatar,
                 downloadProgress: { (progress) in
-                    print(progress)
+                    //print(progress)
                 }) { (image, error) in
                     self.photoImageView.image = image
                 }

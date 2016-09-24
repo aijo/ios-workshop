@@ -25,6 +25,7 @@ class Services {
         if let maxId = maxId {
             mediaEndpoint += "?max_id=\(maxId)"
         }
+        print(mediaEndpoint)
         
         Alamofire.request(mediaEndpoint, method: .get, parameters: nil).responseJSON { (response) in
             switch response.result {
