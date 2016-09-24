@@ -10,7 +10,7 @@ import UIKit
 
 class FeedViewController: UITableViewController {
     
-    let service = Services()
+    let service = Services.sharedInstance
     var items: [Item]?
     
     override func viewDidLoad() {

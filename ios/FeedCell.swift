@@ -21,6 +21,8 @@ class FeedCell: UITableViewCell {
     
     private let USER_IMAGE_SIZE:CGFloat = 35
     
+    private let service = Services.sharedInstance
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -28,6 +30,7 @@ class FeedCell: UITableViewCell {
         userImageView.backgroundColor = UIColor.init(rgba: "#EEEEEE")
         photoImageView.backgroundColor = UIColor.init(rgba: "#EEEEEE")
         userImageView.layer.cornerRadius = USER_IMAGE_SIZE/2
+        userImageView.layer.masksToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -45,6 +48,25 @@ class FeedCell: UITableViewCell {
         if let date = item.datetime {
             dateTimeLabel.text = (date as NSDate).timeAgoSinceNow()
         }
+        
+        if let avatar = item.avatar {
+            service.getImage(imageUrl: avatar,
+                downloadProgress: { (progress) in
+                    print(progress)
+                }) { (image, error) in
+                    self.userImageView.image = image
+                }
+        }
+        
+        if let avatar = item.imageUrl {
+            service.getImage(imageUrl: avatar,
+                downloadProgress: { (progress) in
+                    print(progress)
+                }) { (image, error) in
+                    self.photoImageView.image = image
+                }
+        }
+        
     }
 
 }
