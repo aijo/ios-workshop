@@ -38,10 +38,10 @@ class Services {
     typealias downloadProgress = (_ progress: Double) -> Void
     typealias uiImageCompletion = (_ image: UIImage?, _ error: Error?) -> Void
     
-    func getImage(imageUrl: String, downloadProgress: @escaping downloadProgress, completion: @escaping uiImageCompletion) {
+    func getImage(imageUrl: String, downloadProgress: downloadProgress?=nil, completion: @escaping uiImageCompletion) {
         Alamofire.request(imageUrl)
             .downloadProgress { progress in
-                downloadProgress(progress.fractionCompleted)
+                downloadProgress?(progress.fractionCompleted)
             }
             .responseData { response in
                 switch response.result {

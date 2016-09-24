@@ -51,12 +51,9 @@ class FeedCell: UITableViewCell {
         
         userImageView.image = nil
         if let avatar = item.avatar {
-            service.getImage(imageUrl: avatar,
-                downloadProgress: { (progress) in
-                    print(progress)
-                }) { (image, error) in
-                    self.userImageView.image = image
-                }
+            service.getImage(imageUrl: avatar, completion: { (image, error) in
+                self.userImageView.image = image
+            })
         }
         
         photoImageView.image = nil
