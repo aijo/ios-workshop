@@ -12,6 +12,7 @@ class FeedViewController: UITableViewController {
     
     let service = Services.sharedInstance
     var items: [Item]?
+    var lastMaxId: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,8 +27,9 @@ class FeedViewController: UITableViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 540
         
-        service.getInstagramFeed(user: "aijojoe") { (medias, error) in
+        service.getInstagramFeed(user: "aijojoe", maxId: lastMaxId) { (medias, error) in
             self.items = medias?.items
+            self.lastMaxId = medias?.items?.last?.id
             self.tableView.reloadData()
         }
     }

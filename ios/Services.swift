@@ -20,8 +20,11 @@ class Services {
     
     typealias mediaCompletion = (_ medias: Medias?, _ error: Error?) -> Void
     
-    func getInstagramFeed(user: String, completion: @escaping mediaCompletion) {
-        let mediaEndpoint = "https://www.instagram.com/\(user)/media/"
+    func getInstagramFeed(user: String, maxId:String?=nil, completion: @escaping mediaCompletion) {
+        var mediaEndpoint = "https://www.instagram.com/\(user)/media/"
+        if let maxId = maxId {
+            mediaEndpoint += "?max_id=\(maxId)"
+        }
         
         Alamofire.request(mediaEndpoint, method: .get, parameters: nil).responseJSON { (response) in
             switch response.result {

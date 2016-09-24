@@ -16,6 +16,7 @@ struct Item: Mappable {
     var likes:    Int?
     var caption:  String?
     var datetime: Date?
+    var id:       String?
     
     init?(map: Map) {
         
@@ -29,5 +30,6 @@ struct Item: Mappable {
         avatar      <- map["caption.from.profile_picture"]
         likes       <- map["likes.count"]
         datetime    <- (map["caption.created_time"], DateTransform())
+        id          <- map["caption.id"]
     }
 }
