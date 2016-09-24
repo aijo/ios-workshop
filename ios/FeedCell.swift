@@ -49,6 +49,7 @@ class FeedCell: UITableViewCell {
             dateTimeLabel.text = (date as NSDate).timeAgoSinceNow()
         }
         
+        userImageView.image = nil
         if let avatar = item.avatar {
             service.getImage(imageUrl: avatar,
                 downloadProgress: { (progress) in
@@ -58,6 +59,7 @@ class FeedCell: UITableViewCell {
                 }
         }
         
+        photoImageView.image = nil
         if let avatar = item.imageUrl {
             service.getImage(imageUrl: avatar,
                 downloadProgress: { (progress) in
