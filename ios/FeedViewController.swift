@@ -16,6 +16,7 @@ class FeedViewController: UITableViewController {
     var lastMaxId: String?
     var userId: String?
     var initializeLoad = false
+    var cacheHeight = [Int:CGFloat]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,9 +62,19 @@ class FeedViewController: UITableViewController {
         service.getInstagramFeed(user: instagramUser, maxId: lastMaxId) { (medias, error) in
             self.initializeLoad = true
             if let items = medias?.items {
+                let currentSize = self.items.count
                 self.items.append(contentsOf: items)
                 self.lastMaxId = items.last?.id
-                self.tableView.reloadData()
+                
+                if currentSize == 0 {
+                    self.tableView.reloadData()
+                } else {
+                    var indexPaths = [IndexPath]()
+                    for i in currentSize...self.items.count-1 {
+                        indexPaths.append(IndexPath.init(row: i, section: 0))
+                    }
+                    self.tableView.insertRows(at: indexPaths, with: UITableViewRowAnimation.none)
+                }
             }
         }
     }
@@ -88,10 +99,23 @@ class FeedViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cacheHeight[indexPath.row] = cell.frame.size.height
+        
         let lastElement = items.count - 1
         if indexPath.row == lastElement {
             loadData()
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        if let height = cacheHeight[indexPath.row] {
+            return height
+        }
+        return UITableViewAutomaticDimension
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
     }
     
     /*
