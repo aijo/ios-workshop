@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DZNEmptyDataSet
 
 class FeedViewController: UITableViewController {
     
@@ -27,6 +28,10 @@ class FeedViewController: UITableViewController {
         title = "Feeds"
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 540
+        
+        tableView.emptyDataSetSource = self
+        tableView.emptyDataSetDelegate = self
+        tableView.tableFooterView = UIView()
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: UIBarButtonItemStyle.done, target: self, action: #selector(FeedViewController.logout))
         
@@ -132,4 +137,30 @@ class FeedViewController: UITableViewController {
     }
     */
 
+}
+
+extension FeedViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+    
+    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        let text = "You don't have any photos"
+        let attributes = [NSFontAttributeName: UIFont.boldSystemFont(ofSize: 18),
+                          NSForegroundColorAttributeName: UIColor.darkGray]
+        
+        return NSAttributedString(string: text, attributes: attributes)
+    }
+    
+    func description(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        let text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+        
+        let paragraph = NSMutableParagraphStyle()
+        paragraph.lineBreakMode = .byWordWrapping
+        paragraph.alignment = .center
+        
+        let attributes = [NSFontAttributeName: UIFont.boldSystemFont(ofSize: 14),
+                          NSForegroundColorAttributeName: UIColor.lightGray,
+                          NSParagraphStyleAttributeName: paragraph]
+        
+        return NSAttributedString(string: text, attributes: attributes)
+    }
+    
 }

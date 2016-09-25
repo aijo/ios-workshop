@@ -11,6 +11,10 @@ target 'ios' do
 #        :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git',
 #        :branch => 'swift3'
     pod 'DateTools', '~> 1.7'
+    pod 'DZNEmptyDataSet', '~> 1.8'
+#    pod 'StatusProvider',
+#        :git => 'https://github.com/mariohahn/StatusProvider.git',
+#        :commit => '45096c8916d96c3e6c74ec381e154b4e66a0cfc6'
 end
 
 post_install do |installer|

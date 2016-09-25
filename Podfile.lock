@@ -1,11 +1,13 @@
 PODS:
   - Alamofire (4.0.0)
   - DateTools (1.7.0)
+  - DZNEmptyDataSet (1.8.1)
   - ObjectMapper (1.4.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
   - DateTools (~> 1.7)
+  - DZNEmptyDataSet (~> 1.8)
   - ObjectMapper (from `https://github.com/Hearst-DD/ObjectMapper.git`, branch `swift-3`)
 
 EXTERNAL SOURCES:
@@ -21,8 +23,9 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: fef59f00388f267e52d9b432aa5d93dc97190f14
   DateTools: 53288ee8b905fdc75897a1e6b5cc0144b14cba60
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   ObjectMapper: a07ad0462c5adf014adc0f89ef04c29b626e855e
 
-PODFILE CHECKSUM: 8d4d8c3d2d77c220cab1e3b01fd9d4a41c77171c
+PODFILE CHECKSUM: a8253d989125259e863ddb492eae004ac04a0898
 
 COCOAPODS: 1.0.1
