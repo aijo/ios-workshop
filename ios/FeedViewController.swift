@@ -13,6 +13,7 @@ class FeedViewController: UITableViewController {
     let service = Services.sharedInstance
     var items = [Item]()
     var lastMaxId: String?
+    var userId: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +32,8 @@ class FeedViewController: UITableViewController {
     }
     
     func loadData() {
-        service.getInstagramFeed(user: "aijojoe", maxId: lastMaxId) { (medias, error) in
+        let instagramUser = userId ?? "aijojoe"
+        service.getInstagramFeed(user: instagramUser, maxId: lastMaxId) { (medias, error) in
             if let items = medias?.items {
                 self.items.append(contentsOf: items)
                 self.lastMaxId = items.last?.id

@@ -65,6 +65,18 @@ class ViewController: UIViewController {
         self.performSegue(withIdentifier: "gotoMain", sender: nil)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "gotoMain" {
+            if let tabbarController = segue.destination as? UITabBarController {
+                if let nav = tabbarController.viewControllers?.first as? UINavigationController {
+                    if let vc = nav.topViewController as? FeedViewController {
+                        vc.userId = usernameTextfield.text
+                    }
+                }
+            }
+        }
+    }
+    
 }
 
 extension ViewController: UITextFieldDelegate {
