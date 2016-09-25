@@ -36,7 +36,7 @@ class FeedViewController: UITableViewController {
     }
     
     func logout() {
-        let alert = UIAlertController(title: "Application", message: "Are you sure you want to logout?", preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: "Application", message: "Are you sure you want to logout?", preferredStyle: UIAlertControllerStyle.actionSheet)
         
         let comfirmAction = UIAlertAction(title: "Yes", style: UIAlertActionStyle.default) { (action) in
             UserDefaults.standard.removeObject(forKey: APP_USERNAME)
