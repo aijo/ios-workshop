@@ -28,9 +28,26 @@ class FeedViewController: UITableViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 540
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: UIBarButtonItemStyle.done, target: self, action: #selector(FeedViewController.logout))
+        
         loadData()
         
         UserDefaults.standard.set(userId, forKey: APP_USERNAME)
+    }
+    
+    func logout() {
+        let alert = UIAlertController(title: "Application", message: "Are you sure you want to logout?", preferredStyle: UIAlertControllerStyle.alert)
+        
+        let comfirmAction = UIAlertAction(title: "Yes", style: UIAlertActionStyle.default) { (action) in
+            UserDefaults.standard.removeObject(forKey: APP_USERNAME)
+            self.dismiss(animated: true, completion: nil)
+        }
+        alert.addAction(comfirmAction)
+        
+        let cancelAction = UIAlertAction(title: "No", style: UIAlertActionStyle.cancel, handler: nil)
+        alert.addAction(cancelAction)
+        
+        present(alert, animated: true, completion: nil)
     }
     
     func loadData() {

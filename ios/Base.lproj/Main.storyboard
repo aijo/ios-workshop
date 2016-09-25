@@ -226,11 +226,11 @@
             </objects>
             <point key="canvasLocation" x="2936.8000000000002" y="135.38230884557723"/>
         </scene>
-        <!--Feeds-->
+        <!--Navigation Controller-->
         <scene sceneID="sP9-Py-Y0O">
             <objects>
                 <navigationController id="qtc-zI-1zQ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Feeds" id="4Kc-Yq-Cx9"/>
+                    <tabBarItem key="tabBarItem" systemItem="mostRecent" id="4Kc-Yq-Cx9"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Jxr-h4-O8F">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -243,7 +243,7 @@
             </objects>
             <point key="canvasLocation" x="1991" y="137"/>
         </scene>
-        <!--Item 2-->
+        <!--View Controller-->
         <scene sceneID="sEn-Dh-1QV">
             <objects>
                 <viewController id="KPb-pY-2R3" sceneMemberID="viewController">
@@ -256,13 +256,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="N83-6z-nrf"/>
+                    <tabBarItem key="tabBarItem" systemItem="contacts" id="N83-6z-nrf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1T3-LE-Rfl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1492" y="1073"/>
         </scene>
-        <!--Item 1-->
+        <!--View Controller-->
         <scene sceneID="PBf-5P-1Y3">
             <objects>
                 <viewController id="Efz-oY-6z3" sceneMemberID="viewController">
@@ -275,7 +275,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="uXG-B6-jr9"/>
+                    <tabBarItem key="tabBarItem" systemItem="more" id="uXG-B6-jr9"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KFD-gc-uVF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
