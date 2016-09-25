@@ -15,6 +15,7 @@ class FeedViewController: UITableViewController {
     var items = [Item]()
     var lastMaxId: String?
     var userId: String?
+    var initializeLoad = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +59,7 @@ class FeedViewController: UITableViewController {
     func loadData() {
         let instagramUser = userId ?? "aijojoe"
         service.getInstagramFeed(user: instagramUser, maxId: lastMaxId) { (medias, error) in
+            self.initializeLoad = true
             if let items = medias?.items {
                 self.items.append(contentsOf: items)
                 self.lastMaxId = items.last?.id
@@ -142,7 +144,7 @@ class FeedViewController: UITableViewController {
 extension FeedViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
     
     func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
-        let text = "You don't have any photos"
+        let text = initializeLoad ? "You don't have any photos" : "Loading .."
         let attributes = [NSFontAttributeName: UIFont.boldSystemFont(ofSize: 18),
                           NSForegroundColorAttributeName: UIColor.darkGray]
         
@@ -160,7 +162,7 @@ extension FeedViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
                           NSForegroundColorAttributeName: UIColor.lightGray,
                           NSParagraphStyleAttributeName: paragraph]
         
-        return NSAttributedString(string: text, attributes: attributes)
+        return initializeLoad ? NSAttributedString(string: text, attributes: attributes) : nil
     }
     
 }
