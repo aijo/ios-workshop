@@ -55,6 +55,11 @@ class ViewController: UIViewController {
             self.signinFormView.alpha = 1
             self.signinButton.alpha = 1
         }
+        
+        if let savedUser = UserDefaults.standard.object(forKey: APP_USERNAME) as? String {
+            usernameTextfield.text = savedUser
+            self.performSegue(withIdentifier: "gotoMain", sender: nil)
+        }
     }
     
     func dismissKeyboard() {

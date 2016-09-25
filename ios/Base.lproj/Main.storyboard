@@ -108,7 +108,7 @@
                         <outlet property="signinConstraint" destination="1SH-cT-vUO" id="TT2-4c-CeO"/>
                         <outlet property="signinFormView" destination="S1K-iW-XrB" id="Vdd-8S-rXO"/>
                         <outlet property="usernameTextfield" destination="mWS-dx-1Mr" id="4Mv-bb-RiN"/>
-                        <segue destination="2Cb-FI-Gna" kind="show" identifier="gotoMain" id="oDH-ch-5yQ"/>
+                        <segue destination="2Cb-FI-Gna" kind="show" identifier="gotoMain" animates="NO" id="oDH-ch-5yQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -128,7 +128,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="540"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vsp-vV-yS0" id="6hs-5w-ded">
-                                    <frame key="frameInset" width="375" height="539.5"/>
+                                    <frame key="frameInset" width="375" height="539"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="slN-Bx-fSa">

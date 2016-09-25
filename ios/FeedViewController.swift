@@ -29,6 +29,8 @@ class FeedViewController: UITableViewController {
         tableView.estimatedRowHeight = 540
         
         loadData()
+        
+        UserDefaults.standard.set(userId, forKey: APP_USERNAME)
     }
     
     func loadData() {

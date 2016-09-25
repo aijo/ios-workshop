@@ -22,6 +22,7 @@
 		C8082CF01D8ED54B009D897E /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8082CEF1D8ED54B009D897E /* Services.swift */; };
 		C8082CF31D8EDD95009D897E /* Medias.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8082CF21D8EDD95009D897E /* Medias.swift */; };
 		C8082CF51D8EDDFE009D897E /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8082CF41D8EDDFE009D897E /* Item.swift */; };
+		C8144D181D9778B000F21B2D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8144D171D9778B000F21B2D /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		C8082CEF1D8ED54B009D897E /* Services.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		C8082CF21D8EDD95009D897E /* Medias.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Medias.swift; sourceTree = "<group>"; };
 		C8082CF41D8EDDFE009D897E /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		C8144D171D9778B000F21B2D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				C8082CEF1D8ED54B009D897E /* Services.swift */,
+				C8144D171D9778B000F21B2D /* Constants.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -400,6 +403,7 @@
 				C8082CB61D8E37EE009D897E /* AppDelegate.swift in Sources */,
 				C8082CF31D8EDD95009D897E /* Medias.swift in Sources */,
 				C8082CEA1D8E6540009D897E /* FeedViewController.swift in Sources */,
+				C8144D181D9778B000F21B2D /* Constants.swift in Sources */,
 				C8082CF01D8ED54B009D897E /* Services.swift in Sources */,
 				C8082CE51D8E52E7009D897E /* UIButtonExtension.swift in Sources */,
 				C8082CE71D8E53DB009D897E /* UIColorExtension.swift in Sources */,
