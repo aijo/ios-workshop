@@ -15,6 +15,9 @@ class ProfileViewController: UICollectionViewController {
     
     let SPACE_BETWEEN_CELL: CGFloat = 1
     
+    let service = Services.sharedInstance
+    var items = [Item]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,11 +30,18 @@ class ProfileViewController: UICollectionViewController {
         // Do any additional setup after loading the view.
         
         title = "Profile"
+        
+        loadData()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func loadData() {
+        let instagramUser = "aijojoe"
+        service.getInstagramFeed(user: instagramUser) { (medias, error) in
+            if let items = medias?.items {
+                self.items.append(contentsOf: items)
+                self.collectionView?.reloadData()
+            }
+        }
     }
 
     /*
@@ -52,7 +62,7 @@ class ProfileViewController: UICollectionViewController {
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return items.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -64,6 +74,7 @@ class ProfileViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! PhotoCell
     
         // Configure the cell
+        cell.setupCell(item: items[indexPath.row])
     
         return cell
     }
