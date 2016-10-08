@@ -17,6 +17,7 @@ class ProfileViewController: UICollectionViewController {
     
     let service = Services.sharedInstance
     var items = [Item]()
+    var lastMaxId: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,10 +37,21 @@ class ProfileViewController: UICollectionViewController {
 
     func loadData() {
         let instagramUser = "aijojoe"
-        service.getInstagramFeed(user: instagramUser) { (medias, error) in
+        service.getInstagramFeed(user: instagramUser, maxId: lastMaxId) { (medias, error) in
             if let items = medias?.items {
+                let currentSize = self.items.count
                 self.items.append(contentsOf: items)
-                self.collectionView?.reloadData()
+                self.lastMaxId = items.last?.id
+                
+                if currentSize == 0 {
+                    self.collectionView?.reloadData()
+                } else {
+                    var indexPaths = [IndexPath]()
+                    for i in currentSize...self.items.count-1 {
+                        indexPaths.append(IndexPath.init(row: i, section: 0))
+                    }
+                    self.collectionView?.insertItems(at: indexPaths)
+                }
             }
         }
     }
@@ -77,6 +89,13 @@ class ProfileViewController: UICollectionViewController {
         cell.setupCell(item: items[indexPath.row])
     
         return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        let lastElement = items.count - 1
+        if indexPath.row == lastElement {
+            loadData()
+        }
     }
 
     // MARK: UICollectionViewDelegate
