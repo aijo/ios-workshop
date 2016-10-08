@@ -23,6 +23,9 @@
 		C8082CF31D8EDD95009D897E /* Medias.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8082CF21D8EDD95009D897E /* Medias.swift */; };
 		C8082CF51D8EDDFE009D897E /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8082CF41D8EDDFE009D897E /* Item.swift */; };
 		C8144D181D9778B000F21B2D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8144D171D9778B000F21B2D /* Constants.swift */; };
+		C87A510F1DA92E6300A3C584 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87A510E1DA92E6300A3C584 /* ProfileViewController.swift */; };
+		C87A51111DA930E300A3C584 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87A51101DA930E300A3C584 /* PhotoCell.swift */; };
+		C87A51131DA93CFE00A3C584 /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87A51121DA93CFE00A3C584 /* HeaderCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +70,9 @@
 		C8082CF21D8EDD95009D897E /* Medias.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Medias.swift; sourceTree = "<group>"; };
 		C8082CF41D8EDDFE009D897E /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		C8144D171D9778B000F21B2D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C87A510E1DA92E6300A3C584 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		C87A51101DA930E300A3C584 /* PhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		C87A51121DA93CFE00A3C584 /* HeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +189,7 @@
 			children = (
 				C8082CEB1D8ED037009D897E /* Cell */,
 				C8082CE91D8E6540009D897E /* FeedViewController.swift */,
+				C87A510E1DA92E6300A3C584 /* ProfileViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -191,6 +198,8 @@
 			isa = PBXGroup;
 			children = (
 				C8082CEC1D8ED04C009D897E /* FeedCell.swift */,
+				C87A51101DA930E300A3C584 /* PhotoCell.swift */,
+				C87A51121DA93CFE00A3C584 /* HeaderCell.swift */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -402,8 +411,11 @@
 				C8082CF51D8EDDFE009D897E /* Item.swift in Sources */,
 				C8082CB61D8E37EE009D897E /* AppDelegate.swift in Sources */,
 				C8082CF31D8EDD95009D897E /* Medias.swift in Sources */,
+				C87A51131DA93CFE00A3C584 /* HeaderCell.swift in Sources */,
+				C87A51111DA930E300A3C584 /* PhotoCell.swift in Sources */,
 				C8082CEA1D8E6540009D897E /* FeedViewController.swift in Sources */,
 				C8144D181D9778B000F21B2D /* Constants.swift in Sources */,
+				C87A510F1DA92E6300A3C584 /* ProfileViewController.swift in Sources */,
 				C8082CF01D8ED54B009D897E /* Services.swift in Sources */,
 				C8082CE51D8E52E7009D897E /* UIButtonExtension.swift in Sources */,
 				C8082CE71D8E53DB009D897E /* UIColorExtension.swift in Sources */,
