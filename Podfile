@@ -15,6 +15,13 @@ target 'ios' do
 #    pod 'StatusProvider',
 #        :git => 'https://github.com/mariohahn/StatusProvider.git',
 #        :commit => '45096c8916d96c3e6c74ec381e154b4e66a0cfc6'
+    pod 'RxSwift',    '3.0.0-beta.2'
+    pod 'RxCocoa',    '3.0.0-beta.2'
+end
+
+target 'iosTests' do
+    pod 'RxBlocking', '3.0.0-beta.2'
+    pod 'RxTests',    '3.0.0-beta.2'
 end
 
 post_install do |installer|

@@ -3,12 +3,23 @@ PODS:
   - DateTools (1.7.0)
   - DZNEmptyDataSet (1.8.1)
   - ObjectMapper (1.4.0)
+  - RxBlocking (3.0.0-beta.2):
+    - RxSwift (~> 3.0.0-beta.2)
+  - RxCocoa (3.0.0-beta.2):
+    - RxSwift (~> 3.0.0-beta.2)
+  - RxSwift (3.0.0-beta.2)
+  - RxTests (3.0.0-beta.2):
+    - RxSwift (~> 3.0.0-beta.2)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
   - DateTools (~> 1.7)
   - DZNEmptyDataSet (~> 1.8)
   - ObjectMapper (from `https://github.com/Hearst-DD/ObjectMapper.git`, branch `swift-3`)
+  - RxBlocking (= 3.0.0-beta.2)
+  - RxCocoa (= 3.0.0-beta.2)
+  - RxSwift (= 3.0.0-beta.2)
+  - RxTests (= 3.0.0-beta.2)
 
 EXTERNAL SOURCES:
   ObjectMapper:
@@ -25,7 +36,11 @@ SPEC CHECKSUMS:
   DateTools: 53288ee8b905fdc75897a1e6b5cc0144b14cba60
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   ObjectMapper: a07ad0462c5adf014adc0f89ef04c29b626e855e
+  RxBlocking: 75dad8ed874b732da94780fdf7cf48eabf0d5d2b
+  RxCocoa: 1dd105d8a4e18034ccd7bd6d136445363ce67c8e
+  RxSwift: 0ea939d7d97cb70657190ffde8dc2a9b455778fc
+  RxTests: 9b696439878a1c7653bb55853af027fc261d0635
 
-PODFILE CHECKSUM: a8253d989125259e863ddb492eae004ac04a0898
+PODFILE CHECKSUM: 747821ac0f2c9b740841a0f5a6e0805970985a0c
 
 COCOAPODS: 1.0.1
