@@ -12,6 +12,7 @@ import RxSwift
 class ViewModel {
     
     var username: String
+    var avatar: String?
     var lastMaxId: String?
     
     let service = Services.sharedInstance
@@ -31,6 +32,7 @@ class ViewModel {
         service.getInstagramFeed(user: username, maxId: lastMaxId) { (medias, error) in
             if let items = medias?.items {
                 self.lastMaxId = items.last?.id
+                self.avatar = items.last?.avatar
                 self.observable.on(.next(items))
             }
         }

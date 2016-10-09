@@ -16,11 +16,23 @@ class HeaderCell: UICollectionViewCell {
     
     private let USER_IMAGE_SIZE:CGFloat = 50
     
+    private let service = Services.sharedInstance
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
         userImageView.layer.cornerRadius = USER_IMAGE_SIZE/2
         userImageView.layer.masksToBounds = true
+    }
+    
+    func setupCell(viewModel: ViewModel?) {
+        usernameLabel.text = viewModel?.username
+        
+        if let avatar = viewModel?.avatar {
+            service.getImage(imageUrl: avatar, completion: { (image, error) in
+                self.userImageView.image = image
+            })
+        }
     }
     
     @IBAction func leftMenuDidPressed(_ sender: AnyObject) {

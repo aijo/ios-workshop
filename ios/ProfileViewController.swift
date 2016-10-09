@@ -75,6 +75,9 @@ class ProfileViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerIdentifier, for: indexPath) as! HeaderCell
+        
+        headerView.setupCell(viewModel: viewModel)
+        
         return headerView
     }
 
