@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol LogoutDelegate: class {
+    func logout()
+}
+
 class ProfileViewController: UICollectionViewController {
     
     private let reuseIdentifier = "Cell"
@@ -76,7 +80,7 @@ class ProfileViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerIdentifier, for: indexPath) as! HeaderCell
         
-        headerView.setupCell(viewModel: viewModel)
+        headerView.setupCell(viewModel: viewModel, delegate: self)
         
         return headerView
     }
@@ -127,6 +131,24 @@ class ProfileViewController: UICollectionViewController {
     
     }
     */
+}
+
+extension ProfileViewController: LogoutDelegate {
+    
+    func logout() {
+        let alert = UIAlertController(title: "Application", message: "Are you sure you want to logout?", preferredStyle: UIAlertControllerStyle.actionSheet)
+        
+        let comfirmAction = UIAlertAction(title: "Yes", style: UIAlertActionStyle.default) { (action) in
+            UserDefaults.standard.removeObject(forKey: APP_USERNAME)
+            self.dismiss(animated: true, completion: nil)
+        }
+        alert.addAction(comfirmAction)
+        
+        let cancelAction = UIAlertAction(title: "No", style: UIAlertActionStyle.cancel, handler: nil)
+        alert.addAction(cancelAction)
+        
+        present(alert, animated: true, completion: nil)
+    }
     
 }
 

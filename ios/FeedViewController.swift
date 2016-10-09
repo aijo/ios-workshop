@@ -37,8 +37,6 @@ class FeedViewController: UITableViewController {
         tableView.emptyDataSetDelegate = self
         tableView.tableFooterView = UIView()
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: UIBarButtonItemStyle.done, target: self, action: #selector(FeedViewController.logout))
-        
         viewModel?.subscribe { (items) in
             if let items = items {
                 guard items.count > 0 else { return }
@@ -57,21 +55,6 @@ class FeedViewController: UITableViewController {
                 }
             }
         }
-    }
-    
-    func logout() {
-        let alert = UIAlertController(title: "Application", message: "Are you sure you want to logout?", preferredStyle: UIAlertControllerStyle.actionSheet)
-        
-        let comfirmAction = UIAlertAction(title: "Yes", style: UIAlertActionStyle.default) { (action) in
-            UserDefaults.standard.removeObject(forKey: APP_USERNAME)
-            self.dismiss(animated: true, completion: nil)
-        }
-        alert.addAction(comfirmAction)
-        
-        let cancelAction = UIAlertAction(title: "No", style: UIAlertActionStyle.cancel, handler: nil)
-        alert.addAction(cancelAction)
-        
-        present(alert, animated: true, completion: nil)
     }
 
     // MARK: - Table view data source

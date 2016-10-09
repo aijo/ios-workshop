@@ -311,7 +311,7 @@
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VEp-kz-8ID">
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="21" id="YgC-Vw-P5U"/>
+                                        <constraint firstAttribute="height" constant="21" id="aLP-0S-bip"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
@@ -319,7 +319,7 @@
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r3J-vE-dvb">
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="21" id="WJq-Pc-vHL"/>
+                                        <constraint firstAttribute="height" constant="21" id="vg0-CX-Tso"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -358,30 +358,47 @@
                                         <action selector="centeMenuDidPressed:" destination="rWR-Kt-GDk" eventType="touchUpInside" id="Ycx-oH-oTS"/>
                                     </connections>
                                 </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Juf-Pf-YoA">
+                                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="60" id="FUx-QS-QfO"/>
+                                        <constraint firstAttribute="height" constant="25" id="Mwa-fH-smM"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <state key="normal" title="Logout">
+                                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="logoutButtonDidPressed:" destination="rWR-Kt-GDk" eventType="touchUpInside" id="ANK-Pd-ngj"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <constraints>
+                                <constraint firstItem="VEp-kz-8ID" firstAttribute="leading" secondItem="N6C-cl-d9x" secondAttribute="trailing" constant="8" id="2vb-jY-E8J"/>
                                 <constraint firstItem="N6C-cl-d9x" firstAttribute="top" secondItem="rWR-Kt-GDk" secondAttribute="topMargin" constant="2" id="3Ou-zj-rA6"/>
                                 <constraint firstItem="GAf-sd-Wy6" firstAttribute="leading" secondItem="rWR-Kt-GDk" secondAttribute="leading" id="4F5-Al-gNR"/>
                                 <constraint firstItem="Hwy-rL-zfi" firstAttribute="top" secondItem="GAf-sd-Wy6" secondAttribute="bottom" constant="5" id="5KK-WX-evd"/>
-                                <constraint firstItem="r3J-vE-dvb" firstAttribute="leading" secondItem="N6C-cl-d9x" secondAttribute="trailing" constant="8" id="7LQ-uV-fsq"/>
-                                <constraint firstItem="VEp-kz-8ID" firstAttribute="trailing" secondItem="rWR-Kt-GDk" secondAttribute="trailingMargin" constant="-9" id="8aa-7I-cM4"/>
                                 <constraint firstItem="ymG-9z-l7Y" firstAttribute="leading" secondItem="rWR-Kt-GDk" secondAttribute="leading" constant="10" id="9fi-M2-nvl"/>
-                                <constraint firstItem="VEp-kz-8ID" firstAttribute="leading" secondItem="N6C-cl-d9x" secondAttribute="trailing" constant="8" id="GON-Ei-5X2"/>
-                                <constraint firstItem="r3J-vE-dvb" firstAttribute="top" secondItem="rWR-Kt-GDk" secondAttribute="topMargin" constant="25" id="LhA-lt-Lfw"/>
-                                <constraint firstItem="VEp-kz-8ID" firstAttribute="top" secondItem="rWR-Kt-GDk" secondAttribute="topMargin" constant="6" id="NbR-wQ-cti"/>
                                 <constraint firstAttribute="trailing" secondItem="Hwy-rL-zfi" secondAttribute="trailing" constant="10" id="NgW-G0-n9l"/>
+                                <constraint firstItem="Juf-Pf-YoA" firstAttribute="top" secondItem="rWR-Kt-GDk" secondAttribute="topMargin" constant="15" id="P5r-km-Dd8"/>
+                                <constraint firstItem="Juf-Pf-YoA" firstAttribute="leading" secondItem="VEp-kz-8ID" secondAttribute="trailing" constant="8" id="U5m-0e-Fg9"/>
                                 <constraint firstItem="Hwy-rL-zfi" firstAttribute="leading" secondItem="Z59-Wv-PRZ" secondAttribute="trailing" constant="21" id="V5E-4E-9Fh"/>
+                                <constraint firstItem="r3J-vE-dvb" firstAttribute="top" secondItem="rWR-Kt-GDk" secondAttribute="topMargin" constant="25" id="Ykq-XN-9LE"/>
                                 <constraint firstItem="ymG-9z-l7Y" firstAttribute="top" secondItem="GAf-sd-Wy6" secondAttribute="bottom" constant="5" id="aWR-si-xCl"/>
+                                <constraint firstItem="r3J-vE-dvb" firstAttribute="leading" secondItem="N6C-cl-d9x" secondAttribute="trailing" constant="8" id="dYk-ww-9BW"/>
                                 <constraint firstAttribute="trailing" secondItem="GAf-sd-Wy6" secondAttribute="trailing" id="hvI-fh-DOh"/>
                                 <constraint firstItem="N6C-cl-d9x" firstAttribute="leading" secondItem="rWR-Kt-GDk" secondAttribute="leadingMargin" constant="2" id="i9D-NU-JSS"/>
                                 <constraint firstItem="Z59-Wv-PRZ" firstAttribute="top" secondItem="GAf-sd-Wy6" secondAttribute="bottom" constant="5" id="iZe-AT-tWO"/>
-                                <constraint firstAttribute="trailingMargin" secondItem="r3J-vE-dvb" secondAttribute="trailing" constant="9" id="lts-ch-B8b"/>
+                                <constraint firstAttribute="trailingMargin" secondItem="Juf-Pf-YoA" secondAttribute="trailing" constant="2" id="j5L-tc-l88"/>
                                 <constraint firstItem="Z59-Wv-PRZ" firstAttribute="leading" secondItem="ymG-9z-l7Y" secondAttribute="trailing" constant="27" id="pLJ-zY-8Pj"/>
+                                <constraint firstItem="VEp-kz-8ID" firstAttribute="top" secondItem="rWR-Kt-GDk" secondAttribute="topMargin" constant="6" id="pmM-Dv-5Gr"/>
+                                <constraint firstItem="Juf-Pf-YoA" firstAttribute="leading" secondItem="r3J-vE-dvb" secondAttribute="trailing" constant="8" id="rkG-rD-6C1"/>
                                 <constraint firstItem="Z59-Wv-PRZ" firstAttribute="width" secondItem="Hwy-rL-zfi" secondAttribute="width" id="t9D-5v-4Zj"/>
                                 <constraint firstItem="GAf-sd-Wy6" firstAttribute="top" secondItem="N6C-cl-d9x" secondAttribute="bottom" constant="8" id="u5g-cd-D9N"/>
                                 <constraint firstItem="Z59-Wv-PRZ" firstAttribute="width" secondItem="ymG-9z-l7Y" secondAttribute="width" id="vmN-Dl-Kuu"/>
                             </constraints>
                             <connections>
+                                <outlet property="logoutButton" destination="Juf-Pf-YoA" id="EQ0-mE-xtq"/>
                                 <outlet property="statusLabel" destination="r3J-vE-dvb" id="DMt-yT-tlR"/>
                                 <outlet property="userImageView" destination="N6C-cl-d9x" id="IbT-PL-EA8"/>
                                 <outlet property="usernameLabel" destination="VEp-kz-8ID" id="Nnm-Z6-duM"/>
