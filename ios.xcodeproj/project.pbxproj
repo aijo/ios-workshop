@@ -29,6 +29,7 @@
 		C87A51131DA93CFE00A3C584 /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87A51121DA93CFE00A3C584 /* HeaderCell.swift */; };
 		C87A51161DA94B8600A3C584 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87A51151DA94B8600A3C584 /* ViewModel.swift */; };
 		C87A51181DA9FF0A00A3C584 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87A51171DA9FF0A00A3C584 /* MainViewController.swift */; };
+		C87A511A1DAA081800A3C584 /* ig-sample-data.json in Resources */ = {isa = PBXBuildFile; fileRef = C87A51191DAA081800A3C584 /* ig-sample-data.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		C87A51121DA93CFE00A3C584 /* HeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
 		C87A51151DA94B8600A3C584 /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		C87A51171DA9FF0A00A3C584 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		C87A51191DAA081800A3C584 /* ig-sample-data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "ig-sample-data.json"; sourceTree = "<group>"; };
 		ED21E40E8C11055068429F3F /* Pods-iosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iosTests/Pods-iosTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -166,6 +168,7 @@
 				C8082CBC1D8E37EE009D897E /* Assets.xcassets */,
 				C8082CBE1D8E37EE009D897E /* LaunchScreen.storyboard */,
 				C8082CC11D8E37EE009D897E /* Info.plist */,
+				C87A51191DAA081800A3C584 /* ig-sample-data.json */,
 			);
 			path = ios;
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8082CC01D8E37EE009D897E /* LaunchScreen.storyboard in Resources */,
+				C87A511A1DAA081800A3C584 /* ig-sample-data.json in Resources */,
 				C8082CBD1D8E37EE009D897E /* Assets.xcassets in Resources */,
 				C8082CBB1D8E37EE009D897E /* Main.storyboard in Resources */,
 			);
