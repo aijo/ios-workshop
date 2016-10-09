@@ -417,10 +417,10 @@
             </objects>
             <point key="canvasLocation" x="1990" y="-638"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main View Controller-->
         <scene sceneID="mPU-Ug-fsD">
             <objects>
-                <tabBarController id="2Cb-FI-Gna" sceneMemberID="viewController">
+                <tabBarController id="2Cb-FI-Gna" customClass="MainViewController" customModule="ios" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="uB8-aD-fPB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

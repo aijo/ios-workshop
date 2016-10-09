@@ -11,10 +11,8 @@ import DZNEmptyDataSet
 
 class FeedViewController: UITableViewController {
     
-    let service = Services.sharedInstance
     var items = [Item]()
-    var lastMaxId: String?
-    var userId: String?
+    var viewModel: ViewModel?
     var initializeLoad = false
     var cacheHeight = [Int:CGFloat]()
     
@@ -28,6 +26,10 @@ class FeedViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         title = "Feeds"
+        if let main = navigationController?.parent as? MainViewController {
+            viewModel = main.viewModel
+        }
+        
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 540
         
@@ -37,9 +39,24 @@ class FeedViewController: UITableViewController {
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: UIBarButtonItemStyle.done, target: self, action: #selector(FeedViewController.logout))
         
-        loadData()
-        
-        UserDefaults.standard.set(userId, forKey: APP_USERNAME)
+        viewModel?.subscribe { (items) in
+            if let items = items {
+                guard items.count > 0 else { return }
+                self.initializeLoad = true
+                let currentSize = self.items.count
+                self.items.append(contentsOf: items)
+                
+                if currentSize == 0 {
+                    self.tableView.reloadData()
+                } else {
+                    var indexPaths = [IndexPath]()
+                    for i in currentSize...self.items.count-1 {
+                        indexPaths.append(IndexPath.init(row: i, section: 0))
+                    }
+                    self.tableView.insertRows(at: indexPaths, with: UITableViewRowAnimation.none)
+                }
+            }
+        }
     }
     
     func logout() {
@@ -55,28 +72,6 @@ class FeedViewController: UITableViewController {
         alert.addAction(cancelAction)
         
         present(alert, animated: true, completion: nil)
-    }
-    
-    func loadData() {
-        let instagramUser = userId ?? "aijojoe"
-        service.getInstagramFeed(user: instagramUser, maxId: lastMaxId) { (medias, error) in
-            self.initializeLoad = true
-            if let items = medias?.items {
-                let currentSize = self.items.count
-                self.items.append(contentsOf: items)
-                self.lastMaxId = items.last?.id
-                
-                if currentSize == 0 {
-                    self.tableView.reloadData()
-                } else {
-                    var indexPaths = [IndexPath]()
-                    for i in currentSize...self.items.count-1 {
-                        indexPaths.append(IndexPath.init(row: i, section: 0))
-                    }
-                    self.tableView.insertRows(at: indexPaths, with: UITableViewRowAnimation.none)
-                }
-            }
-        }
     }
 
     // MARK: - Table view data source
@@ -103,7 +98,7 @@ class FeedViewController: UITableViewController {
         
         let lastElement = items.count - 1
         if indexPath.row == lastElement {
-            loadData()
+            viewModel?.loadData()
         }
     }
     

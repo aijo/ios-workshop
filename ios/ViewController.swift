@@ -72,12 +72,8 @@ class ViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "gotoMain" {
-            if let tabbarController = segue.destination as? UITabBarController {
-                if let nav = tabbarController.viewControllers?.first as? UINavigationController {
-                    if let vc = nav.topViewController as? FeedViewController {
-                        vc.userId = usernameTextfield.text
-                    }
-                }
+            if let tabbarController = segue.destination as? MainViewController {
+                tabbarController.viewModel = ViewModel(username: usernameTextfield.text!)
             }
         }
     }

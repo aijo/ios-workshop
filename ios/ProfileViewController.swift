@@ -15,9 +15,8 @@ class ProfileViewController: UICollectionViewController {
     
     let SPACE_BETWEEN_CELL: CGFloat = 1
     
-    let service = Services.sharedInstance
     var items = [Item]()
-    var lastMaxId: String?
+    var viewModel: ViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,17 +30,14 @@ class ProfileViewController: UICollectionViewController {
         // Do any additional setup after loading the view.
         
         title = "Profile"
+        if let main = navigationController?.parent as? MainViewController {
+            viewModel = main.viewModel
+        }
         
-        loadData()
-    }
-
-    func loadData() {
-        let instagramUser = "aijojoe"
-        service.getInstagramFeed(user: instagramUser, maxId: lastMaxId) { (medias, error) in
-            if let items = medias?.items {
+        viewModel?.subscribe { (items) in
+            if let items = items {
                 let currentSize = self.items.count
                 self.items.append(contentsOf: items)
-                self.lastMaxId = items.last?.id
                 
                 if currentSize == 0 {
                     self.collectionView?.reloadData()
@@ -94,7 +90,7 @@ class ProfileViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         let lastElement = items.count - 1
         if indexPath.row == lastElement {
-            loadData()
+            viewModel?.loadData()
         }
     }
 
